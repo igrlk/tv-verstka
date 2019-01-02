@@ -1,0 +1,171 @@
+@import 'grid.styl'
+@import 'variables.styl'
+@import 'mixins.styl'
+@import 'font-includes.styl'
+@import 'animations.styl'
+
+*
+	font-family Roboto, sans-serif
+	margin 0
+	padding 0
+	outline none
+	text-decoration none
+	box-sizing border-box
+
+body
+	position relative
+	padding-bottom 158px
+	min-height 100vh
+
+.header
+	background-color #4b5151
+	height 40px
+.footer
+	background-color #4b5151
+	height 83px
+	position absolute
+	left 0
+	bottom 0
+	width 100%
+
+.table
+	max-width 1023px
+	padding 0 15px
+	margin 0 auto
+	background-color #ffffff
+	position relative
+	&-title
+		color #5a5a5a
+		margin 19px 0 8px
+		text-transform uppercase
+		font-family 'Roboto'
+		font-weight 600
+		display flex
+		align-items center
+		img
+			width 21px
+			margin-right 5px
+	&-body
+		border 1px solid #bfbfbf
+		br(3px)
+	&-head
+		display flex
+		background-color #ecf0f3
+		padding 2px 0 6px
+		.table-col
+			color #545454
+			font-weight 400
+	&-col
+		color #5a5a5a
+		text-align right
+		font-weight 600
+		&:first-child
+			flex 1
+			display flex
+		&:nth-child(2)
+			flex 0 75px
+		&:nth-child(3)
+			flex 0 175px
+		&:last-child
+			flex 0 195px
+			padding-right 27px
+		& > img
+			width 48px
+			height 48px
+			br(1px)
+			margin 0 9px
+	&-row
+		border-top 1px solid #d8d9da
+		display flex
+		align-items center
+		padding 7px 0
+		&:nth-child(2n)
+			background-color #fbfbfb
+	&-showbtn
+		width 175px
+		line-height 30px
+		height 30px
+		cursor pointer
+		text-align center
+		text-transform uppercase
+		font-size 11px
+		font-weight 600
+		color #646464
+		border-bottom-right-radius 3px
+		border-bottom-left-radius 3px
+		border 1px solid #bfbfbf
+		border-top 1px dashed #bfbfbf
+		background-color #ffffff
+		position absolute
+		left 50%
+		bottom -29px
+		transform translateX(-50%)
+		ts(0.1s)
+		&:hover
+			background-color #ececec
+	&-info
+		display flex
+		flex-direction column
+		align-items flex-start
+		justify-content space-between
+		&__title
+			color #2c76c7
+			position relative
+			label
+				width 14px
+				height 14px
+				position absolute
+				left calc(100% + 10px)
+				top 50%
+				transform translateY(-50%)
+				overflow hidden
+				color transparent
+				br(6px)
+				background-color #b6b6b6
+				transition 0.4s
+				font-size 12px
+				line-height 14px
+				cursor pointer
+				user-select none
+				&:after
+					transition 0.2s
+					content ''
+					background no-repeat center
+					position absolute
+					left 50%
+					top 50%
+					transform translate(-50%, -50%)
+				&:hover
+					padding 0 12px
+					width auto
+					color #fff
+					&:after
+						hide()
+				&:nth-child(2)
+					&:hover
+						background-color #a4c574
+					&:after
+						width 8px
+						height 8px
+						background-image url(../img/plus.png)
+				&:last-child
+					background-color #a4c574
+					hide()
+					&:hover
+						background-color red
+					&:after
+						width 10px
+						height 7px
+						background-image url(../img/success.jpg)
+			input[type=checkbox]
+				display none
+				&:first-child:checked
+					& ~ label:nth-child(2)
+						hide()
+					& ~ label:nth-child(3)
+						show()
+		&__count
+			img
+				width 11px
+				margin-right 6px
+@import 'media.styl'

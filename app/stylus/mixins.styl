@@ -1,0 +1,50 @@
+placeholderColor(colorHex)
+	&::-webkit-input-placeholder {color:colorHex;}
+	&::-moz-placeholder          {color:colorHex;}
+	&:-moz-placeholder           {color:colorHex;}
+	&:-ms-input-placeholder      {color:colorHex;}
+	
+br(n)
+	border-radius n
+ts(n)
+	transition n
+hide()
+	opacity 0
+	pointer-events none
+show()
+	opacity 1
+	pointer-events all
+afterMessage(msg)
+	position relative
+	cursor pointer
+	&:after
+		content msg
+		position absolute
+		hide()
+		top -37px
+		left 0
+		br(3px)
+		background-color #fff
+		padding 8px 10px
+		font-size 12px
+		color #9b9b9b
+		white-space nowrap
+		ts(0.1s)
+		box-shadow $bs
+	&:before
+		content ''
+		position absolute
+		top -7px
+		left 50%
+		transform translateX(-50%)
+		width 0
+		height 0
+		border-style solid
+		border-width 5px 4.5px 0 4.5px
+		border-color #ffffff transparent transparent transparent
+		box-shadow $bs
+		ts(0.1s)
+		hide()
+	&:hover
+		&:after, &:before
+			show()

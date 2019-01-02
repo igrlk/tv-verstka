@@ -1,0 +1,16 @@
+@media screen and (max-width: 992px) {
+  .table-info__title label:hover {
+    width: 14px;
+    padding: 0;
+    color: transparent;
+  }
+}
+@media screen and (max-width: 700px) {
+  .table-col:nth-child(2) {
+    padding-right: 27px;
+  }
+  .table-col:nth-child(3),
+  .table-col:nth-child(4) {
+    display: none;
+  }
+}
